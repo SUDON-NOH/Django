@@ -14,7 +14,7 @@ Enter the VENV
 Out the VENV
 - deactivate
 
-and then
+and then  
 I have to go into the Pycharmprojects folder
 - cd /home/*user*/Pycharmprojects
 
