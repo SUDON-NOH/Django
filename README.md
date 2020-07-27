@@ -10,7 +10,7 @@ The site for searching the packages to use in python
 - https://www.djangopackages.com/ : Jango package
 
 Enter the VENV
-- $ source /home/*user*/VENV/vDjBook/bin/activate
+- $ source /home/*user*/VENV/vDjBook/bin/activate  
 Out the VENV
 - deactivate
 
