@@ -18,7 +18,7 @@ and then
 I have to go into the Pycharmprojects folder
 - cd /home/*user*/Pycharmprojects
 
-order for linux
+## order for linux
 - :w : save
 - :sav : save as
 - :w file.txt : save the file as text file
@@ -31,4 +31,29 @@ order for linux
 - :e : read a file
 - :e# : read a file that opened before
 
+## How to update latest Python on Linux
 
+1. $ sudo yum install gcc openssl-devel libffi-devel bzip2-devel
+
+2. $ wget (link for python download)
+
+3. tar xzf (tgz file for python)
+
+4. cd Python-ver(ex python3.8.5)
+
+5. ./configure --enable-optimizations
+
+6. sudo make altinstall
+
+7. $ which python3 (Check the link for python3)
+      print: /usr/bin/python3
+      
+8. $ sudo rm /usr/bin/python3
+
+9. $ which python3.8 (To designate symbolic link, Check the location for a file that was installed before) 
+      print: /usr/local/bin/python3.8
+      
+10. $ ln -s /usr/local/bin/python3.8 /usr/bin/python3
+
+11. $ python3 --version
+      print: Python3.8
