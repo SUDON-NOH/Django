@@ -18,7 +18,7 @@ and then
 I have to go into the Pycharmprojects folder
 - cd /home/*user*/Pycharmprojects
 
-## order for linux
+## Order for linux
 - :w : save
 - :sav : save as
 - :w file.txt : save the file as text file
@@ -57,3 +57,17 @@ I have to go into the Pycharmprojects folder
 
 11. $ python3 --version
       print: Python3.8
+
+## When it doesn't work cuz "ModuleNotFoundError: No module named '_sqlite3'
+
+I installed Python3.8 on Centos8
+
+1. yum install sqlite-devel -y
+
+2. go to python folder
+(In my case, "cd /home/sudonnoh/Python-3.8.5
+./configure
+make altinstall
+
+3. try again "python3 manage.py migrate"
+
