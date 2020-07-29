@@ -18,6 +18,9 @@ and then
 I have to go into the Pycharmprojects folder
 - cd /home/*user*/Pycharmprojects
 
+runserver
+python3 manage.py runserver 0.0.0.0:8000
+
 ## Order for linux
 - :w : save
 - :sav : save as
