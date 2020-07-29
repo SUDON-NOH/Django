@@ -65,7 +65,7 @@ python3 manage.py runserver 0.0.0.0:8000
 
 I installed Python3.8 on Centos8
 
-1. yum install sqlite-devel -y
+1. $ yum install sqlite-devel -y
 
 2. go to python folder
 (In my case, "cd /home/sudonnoh/Python-3.8.5
@@ -74,3 +74,17 @@ make altinstall
 
 3. try again "python3 manage.py migrate"
 
+
+## If you want to initialize DB on Django..
+
+1. $ find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+
+2. $ find . -path "*/migrations/*.pyc"  -delete
+
+3. $ python3 manage.py makemigrations  
+     If it has error for "no module named 'django.db.migrations.migration', you should reinstall Django.  
+     First, you must check the version of installed Django.  
+     $ python3 -m django --version  
+     $ pip install --upgrade -force-reinstall Django==version
+
+4. $ python3 manage.py migrate
