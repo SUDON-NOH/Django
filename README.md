@@ -87,4 +87,4 @@ make altinstall
      $ python3 -m django --version  
      $ pip install --upgrade -force-reinstall Django==version
 
-4. $ python3 manage.py migrate
+4. $ python3 manage.py migrate  
