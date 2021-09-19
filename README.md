@@ -1,90 +1,22 @@
-# Django
+# DJango
 
-Start python in linux
-- ls : check file in folder
-- cd folder_name : into folder
-- sh pycharm.sh : run the pycharm
+## mysqlclinet 설치가 안되는 경우
 
-The site for searching the packages to use in python
-- https://pypi.python.org/ : python package
-- https://www.djangopackages.com/ : Jango package
-
-Enter the VENV
-- $ source /home/*user*/VENV/vDjBook/bin/activate  
-Out the VENV
-- deactivate
-
-and then  
-I have to go into the Pycharmprojects folder
-- cd /home/*user*/Pycharmprojects
-
-runserver
-python3 manage.py runserver 0.0.0.0:8000
-
-## Order for linux
-- :w : save
-- :sav : save as
-- :w file.txt : save the file as text file
-- :w > file.txt : save the file over the origin file
-- :q : exit vi
-- :up : save the content that changed
-- ZZ : save and exit
-- :wq! : save and exit
-- :e file.txt : read file.txt
-- :e : read a file
-- :e# : read a file that opened before
-
-## How to update latest Python on Linux
-
-1. $ sudo yum install gcc openssl-devel libffi-devel bzip2-devel
-
-2. $ wget (link for python download)
-
-3. tar xzf (tgz file for python)
-
-4. cd Python-ver(ex python3.8.5)
-
-5. ./configure --enable-optimizations
-
-6. sudo make altinstall
-
-7. $ which python3 (Check the link for python3)
-      print: /usr/bin/python3
-      
-8. $ sudo rm /usr/bin/python3
-
-9. $ which python3.8 (To designate symbolic link, Check the location for a file that was installed before) 
-      print: /usr/local/bin/python3.8
-      
-10. $ ln -s /usr/local/bin/python3.8 /usr/bin/python3
-
-11. $ python3 --version
-      print: Python3.8
-
-## When it doesn't work cuz "ModuleNotFoundError: No module named '_sqlite3'
-
-I installed Python3.8 on Centos8
-
-1. $ yum install sqlite-devel -y
-
-2. go to python folder
-(In my case, "cd /home/sudonnoh/Python-3.8.5
-./configure
-make altinstall
-
-3. try again "python3 manage.py migrate"
+- 가상환경에서 sudo yum install python3-devel
+- yum install -y mariadb-devel gcc
 
 
-## If you want to initialize DB on Django..
+## Pycharm 으로 만든 가상환경에서 Django Runserver 실행 방법
 
-1. $ find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+1) Pycharm Project 폴더 경로 검색
+2) Pycharm Project 경로 내에서 Project명/venv/bin 에 진입
+3) source activate
+4) Pycharm Project 내에 manage.py 파일이 있는 곳에서 python3 manage.py runserver 0:8000 실행
 
-2. $ find . -path "*/migrations/*.pyc"  -delete
+## IE 문서 모드란(meta http-equiv="x-ua-compatible" content="IE=edge")
+content="IE=edge"는 IE브라우저에서, 각 버전 중 가장 최신 표준 모드를 선택하는 문서 모드
 
-3. $ python3 manage.py makemigrations  
-     If it has error for "no module named 'django.db.migrations.migration', you should reinstall Django.  
-     First, you must check the version of installed Django.  
-     $ python3 -m django --version  
-     $ pip install --upgrade -force-reinstall Django==version
-
-4. $ python3 manage.py migrate  
+## on_delete.CASCADE
+Cat_ID = models.ForeignKey(Catalog_info, on_delete=models.CASCADE, db_column='C_ID')   
+Catalog_info 테이블에서 레코드가 삭제되는 경우 그 레코드에 연결된 Cat_ID 도 삭제됨
+Foreignkey 는 제약조건으로 사용하고 join을 활용해야함
